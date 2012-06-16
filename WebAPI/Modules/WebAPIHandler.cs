@@ -1220,14 +1220,6 @@ namespace Aurora.Services
         {
             Dictionary<string, string> authorization = authorizationHeader(request);
 
-<<<<<<< HEAD:WebUI/Modules/WebUIHandler.cs
-            m_server = simBase.GetHttpServer(handlerConfig.GetUInt(Name + "Port", m_connector.HandlerPort));
-            //This handler allows sims to post CAPS for their sims on the CAPS server.
-            m_server.AddStreamHandler(new WebUIHTTPHandler(this, m_connector.HandlerPassword, registry, gridInfo, AdminAgentID, runLocally, httpPort));
-            m_server2 = simBase.GetHttpServer(handlerConfig.GetUInt(Name + "TextureServerPort", m_connector.TexturePort));
-            m_server2.AddHTTPHandler("GridTexture", OnHTTPGetTextureImage);
-            gridInfo[Name + "TextureServer"] = m_server2.ServerURI;
-=======
             switch (APIAuthentication)
             {
                 case "Digest":
@@ -1251,7 +1243,6 @@ namespace Aurora.Services
                             m_authNonces.Remove(authorization["opaque"]);
 
                             UUID accountID = authUser(request);
->>>>>>> fc8631c1054f85607d952863a7abd5bb3d76a103:WebAPI/Modules/WebAPIHandler.cs
 
                             if (accountID != UUID.Zero)
                             {
@@ -1553,11 +1544,8 @@ namespace Aurora.Services
             return reply;
         }
 
-<<<<<<< HEAD:WebUI/Modules/WebUIHandler.cs
-        public Bitmap ResizeBitmap(Image b, int nWidth, int nHeight)
-=======
         private Bitmap ResizeBitmap(Image b, int nWidth, int nHeight)
->>>>>>> fc8631c1054f85607d952863a7abd5bb3d76a103:WebAPI/Modules/WebAPIHandler.cs
+
         {
             Bitmap newsize = new Bitmap(nWidth, nHeight);
             Graphics temp = Graphics.FromImage(newsize);
