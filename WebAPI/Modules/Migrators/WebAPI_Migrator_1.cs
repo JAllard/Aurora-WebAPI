@@ -44,7 +44,7 @@ namespace Aurora.DataManager.Migration.Migrators
             Version = new Version(0, 0, 1);
             MigrationName = "WebAPI";
 
-            schema = new List<Rec<string, ColumnDefinition[], IndexDefinition[]>>();
+            schema = new List<SchemaDefinition>();
 
             AddSchema("webapi_access_log", new ColumnDefinition[3]{
                 new ColumnDefinition{

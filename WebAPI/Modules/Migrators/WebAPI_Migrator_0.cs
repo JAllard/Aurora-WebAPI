@@ -27,7 +27,7 @@
 
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using C5;
 
 using OpenMetaverse;
@@ -43,7 +43,7 @@ namespace Aurora.DataManager.Migration.Migrators
             Version = new Version(0, 0, 0);
             MigrationName = "WebAPI";
 
-            schema = new List<Rec<string, ColumnDefinition[], IndexDefinition[]>>();
+            schema = new List<SchemaDefinition>();
 
             AddSchema("webapi_access_log", new ColumnDefinition[3]{
                 new ColumnDefinition{
